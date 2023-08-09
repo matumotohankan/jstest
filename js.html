@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/js.css">
+    <script src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.1.3/build/fetch-jsonp.min.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+</head>
+
+<body onload="attachValidationListeners();">
+    <form onsubmit="return validateForm();">
+        名前<input type="text" id="name" placeholder="フルネーム">
+        <br><span class="error" id="nameError"></span><br>
+        電話番号<input type="text" id="phoneNumber" placeholder="数字のみハイフンなし 例）5470021">
+        <br><span class="error" id="phoneNumberError"></span><br>
+
+        <div class="botan">
+            郵便番号<input type="text" id="postalCode" placeholder="数字のみ">
+            <button type="button" id="search">住所検索</button>
+        </div>
+        <br><span class="error" id="postalCodeError"></span><br>
+        都道府県<input type="text" id="address" placeholder="大阪府">
+        <br><span class="error" id="addressError"></span><br>
+        市区町村<input type="text" id="city" placeholder="大阪市平野区">
+        <br><span class="error" id="cityError"></span><br>
+        町域<input type="text" id="area" placeholder="喜連東3-7-33-502">
+        <br><span class="error" id="areaError"></span><br>
+        メールアドレス：<input type="email" id="email" placeholder="＠を使用してください">
+        <br><span class="error" id="emailError"></span><br>
+        件名<input type="text" id="subject" max="10" placeholder="10文字以内">
+        <br><span class="error" id="subjectError"></span><br>
+        内容<textarea id="content" maxlength="1000" rows="5" placeholder="1000文字以内"></textarea>
+        <br><span class="error" id="contentError"></span><br>
+
+        <div class="botan2">
+            認証コード<input type="password" id="authCode" maxlength="15" minlength="8" placeholder="半角大文字小文字数字1つ">
+
+            <button type="button" onclick="toggleVisibility();">表示切替</button><br>
+        </div>
+        <br><span class="error" id="authCodeError"></span><br>
+<div class="radio">
+        <h3>このサイトはどこで知りましたか？</h3>
+
+        <div>
+            <input type="radio" id="huey" name="drone" value="huey" />
+            <label for="huey">YouTube</label>
+        </div>
+
+        <div>
+            <input type="radio" id="dewey" name="drone" value="dewey" />
+            <label for="dewey">Instagram</label>
+        </div>
+
+        <div>
+            <input type="radio" id="louie" name="drone" value="louie" />
+            <label for="louie">TikTok</label>
+        </div>
+
+        <div>
+            <input type="radio" id="louie1" name="drone" value="louie1" />
+            <label for="louie">その他</label>
+        </div>
+</div>
+        <input type="submit" value="送信">
+        <button id="showModalButton" onclick="showModal()">aa</button>
+    </form>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>送信完了</h2>
+            <img src="Ez6FP1tVgAMrbIA.jpg" alt="送信完了画像">
+            <p>送信が完了しました。ありがとうございました。</p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/js.js"></script>
+</body>
+
+</html>
